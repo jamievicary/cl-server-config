@@ -42,9 +42,10 @@ function update_research() {
 		var result = copy_files('vicaryjo@wallace.cs.bham.ac.uk:public_html');
 		*/
 		console.log('About to copy to camb');
-		var result = child_process.execSync("scp -rp output/cambridge_index.html jv258@slogin-serv.cl.cam.ac.uk:~/public_html/index.html")
-		console.log('About to copy to ox');
-		result += '\n\n' + copy_files('jamv@linux.cs.ox.ac.uk:/fs/website/people/jamie.vicary');
+		//var result = child_process.execSync("scp -rp output/cambridge_index.html jv258@slogin-serv.cl.cam.ac.uk:~/public_html/index.html")
+		var result = child_process.execSync("cp output/cambridge_index.html ~/public_html/index.html")
+		//console.log('About to copy to ox');
+		//result += '\n\n' + copy_files('jamv@linux.cs.ox.ac.uk:/fs/website/people/jamie.vicary');
 		console.log('Done');
 		console.log(result);
 	});
